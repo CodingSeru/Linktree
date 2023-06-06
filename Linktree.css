@@ -1,0 +1,206 @@
+* {
+  padding: 0;
+  margin: 0 auto;
+  font-family: Sans-Serif;
+  max-width: 600px;
+}
+
+/*————— Style Background Gradient —————*/
+
+body {
+  overflow: hidden;
+}
+.bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/*————— Style Provile Or Header —————*/
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+header img{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  margin-top: 50px;
+  animation: rotate 5s infinite;
+}
+
+header h2 {
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+header p {
+  margin: 0 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #fff;
+  opacity: 75%;
+}
+
+/*————— Animations Border —————*/
+
+@keyframes rotate {
+  0% {
+    box-shadow: 0 0 3px #fff;
+  }
+  50% {
+    box-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 15px #fff, 0 0 25px #fff;
+  }
+  100% {
+    box-shadow: 0 0 3px #fff;
+  }
+}
+
+/*————— Don't Use Display Flex Here —————*/
+/*————— Style Link —————*/
+
+.link {
+  list-style: none;
+}
+.link li {
+  margin: 20px;
+}
+.link a {
+  padding: 15px 0;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 800;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  overflow: hidden;
+  transition: 1s ease-out;
+  transition-delay: 0.5s;
+}
+#lastlink  {
+  animation-delay: 6s;
+}
+
+/*————— Hover Link Animations —————*/
+
+.link a::before {
+content: "";
+  position: absolute;
+      background: rgba(255,255,255,0.4);
+      width: 20%;
+      height: 100%;
+      top: 0%;
+transform: skew(45deg);
+  left: -125%;
+  transition: left 1s ease-out;
+}
+.link a:hover {
+  box-shadow: 0 0 5px #fff, 0 0 15px #fff;
+}
+.link a:hover::before {
+  left: 150%;
+}
+
+/*————— Style Footer —————*/
+
+footer p {
+  text-align: center;
+  margin-top: 40px;
+  color: #fff;
+  animation-delay: 7s;
+}
+
+/*————— Glass Animations —————*/
+
+.bubbles{
+  position: absolute;
+  bottom: -120px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 70px;
+  width: 100%;
+  justify-content: space-around;
+}
+.bubbles span{
+  height: 60px;
+  width: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+  animation: move 15s linear infinite;
+  position: relative;
+  overflow: hidden;
+}
+@keyframes move {
+  100%{
+    transform: translateY(-120vh);
+  }
+}
+.bubbles span.one{
+  animation-delay: 5.5s;
+  transform: scale(1.55)
+}
+.bubbles span.two{
+  animation-delay: 14s;
+  transform: scale(1.35)
+}
+.bubbles span.three{
+  animation-delay: 1s;
+  transform: scale(0.35)
+}
+.bubbles span.four{
+  animation-delay: 10s;
+  transform: scale(1)
+}
+.bubbles span:before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 60px;
+  width: 40%;
+  transform: skew(45deg) translateX(150px);
+  background: rgba(255, 255, 255, 0.15);
+  animation: mirror 3s linear infinite;
+}
+@keyframes mirror {
+  100%{
+    transform: translateX(-450px);
+  }
+}
+.bubbles span.one:before{
+  animation-delay: 1.5s;
+}
+.bubbles span.two:before{
+  animation-delay: 3.5s;
+}
+.bubbles span.three:before{
+  animation-delay: 2.5s;
+}
+.bubbles span.four:before{
+  animation-delay: 7.5s;
+}
+
+  /*————— Style Position All —————*/
+  
+  .container {
+    position: absolute;
+  }
+
+@media screen and (min-width: 576px) {
+  
+
+.container {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+}
